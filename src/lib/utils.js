@@ -9,3 +9,7 @@ export const queryClientInstance = new QueryClient({
         },
     },
 });
+/** @param {Array<string | undefined | null | false>} classes */
+export function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
