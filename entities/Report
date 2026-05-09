@@ -1,0 +1,101 @@
+{
+  "name": "Report",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "The research topic"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "planning",
+        "researching",
+        "summarizing",
+        "generating_pdf",
+        "completed",
+        "failed"
+      ],
+      "default": "planning",
+      "description": "Current status of the report generation"
+    },
+    "executive_summary": {
+      "type": "string",
+      "description": "Executive summary of the research"
+    },
+    "key_findings": {
+      "type": "string",
+      "description": "Key findings from the research"
+    },
+    "current_trends": {
+      "type": "string",
+      "description": "Current trends identified"
+    },
+    "opportunities": {
+      "type": "string",
+      "description": "Opportunities identified"
+    },
+    "risks_challenges": {
+      "type": "string",
+      "description": "Risks and challenges identified"
+    },
+    "conclusion": {
+      "type": "string",
+      "description": "Research conclusion"
+    },
+    "sources": {
+      "type": "array",
+      "description": "Sources used in the research",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "snippet": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "pdf_url": {
+      "type": "string",
+      "description": "URL to the generated PDF report"
+    },
+    "agent_logs": {
+      "type": "array",
+      "description": "Logs from agent execution",
+      "items": {
+        "type": "object",
+        "properties": {
+          "agent": {
+            "type": "string"
+          },
+          "action": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "error_message": {
+      "type": "string",
+      "description": "Error message if the report generation failed"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "description": "Total time taken to generate the report"
+    }
+  },
+  "required": [
+    "topic"
+  ]
+}
